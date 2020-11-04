@@ -1,2 +1,2 @@
 # botBooks
-Flebusta bot
+Flibusta bot
