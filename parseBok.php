@@ -3,8 +3,8 @@ require_once "torCurl.php";
 
 function getBooksUponReq($namebook, $page = 0){
     $url = HOSTSCRAPING . '/booksearch?ask=' . urlencode($namebook) . "&chb=on";
-    if($page > 0) $url = HOSTSCRAPING . '/booksearch?ask=' . urlencode($namebook) . "&chb=on&page=" . $page;
-    $html = getCurl();
+    if($page > 0) $url .= "&page=" . $page;
+    $html = getCurl($url);
     $doc = new DiDom\Document($html);
     $result = [];
     $result[] = $doc -> find('#main.clear-block h3')[0] -> text();
