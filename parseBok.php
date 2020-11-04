@@ -1,20 +1,20 @@
 <?php 
 require_once "torCurl.php";
 
-function getBooksUponReq($namebook, $page = 0){
-    $url = HOSTSCRAPING . '/booksearch?ask=' . urlencode($namebook) . "&chb=on";
-    if($page > 0) $url .= "&page=" . $page;
-    $html = getCurl($url);
-    $doc = new DiDom\Document($html);
-    $result = [];
-    $result[] = $doc -> find('#main.clear-block h3')[0] -> text();
-    $doc = new DiDom\Document($doc -> find('#main.clear-block ul')[1] -> html());
-
+function getBooksUponReq($namebook){
+    $page = 0;
     $res = [];
-    foreach($doc -> find("li") as $val){
-        $res[] = [$val -> text(), $val -> children()[1] -> getAttribute('href')];
-    }
-    $result[] = $res;
-
-    return $result;
+    do{
+        $url = HOSTSCRAPING . "/booksearch?page=$page&ask=" . urlencode($namebook) . "&chb=on";
+        $html = getCurl($url);
+        $doc = new DiDom\Document($html);
+        $doc = new DiDom\Document($doc -> find('#main.clear-block ul')[1] -> html());
+        $arr = $doc -> find("li"); 
+        foreach($arr as $val){
+            $res[] = [$val -> text(), $val -> children()[1] -> getAttribute('href')];
+        }
+        if(count($arr) < 50) break;
+        $page++;
+    }while(true);
+    return $res;
 }
