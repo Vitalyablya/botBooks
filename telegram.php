@@ -1,3 +1,12 @@
 <?php 
-$telegram = new Telegram\Bot\Api('1407696883:AAHIdieRnxc5EO-94ftdlbz26p6Y1MnKB4k');
+$telegram = new Telegram\Bot\Api(TOKENBOT);
+
+function sendMsg($msg){
+    global $telegram;
+    $response = $telegram->sendMessage([
+        'chat_id' => USERID, 
+        'text' => $msg
+      ]);
+    $messageId = $response->getMessageId();
+}
 ?>
