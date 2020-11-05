@@ -1,13 +1,11 @@
 <?php 
-function sendCurl(string $url, string $req,  $body = "", array $headers = []){
-    $headers += ['Content-Type:application/json'];
+function sendCurl(string $url, string $req,  $body = ""){
     $curl = curl_init();
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
     curl_setopt($curl, CURLOPT_USERAGENT, 'flibustabot');
     curl_setopt($curl, CURLOPT_HEADER, false);
-
     if($req === "POST"){
+        curl_setopt($curl, CURLOPT_HTTPHEADER, ['Content-Type:application/json']);
         curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'POST');
         curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($body));
     }else if($req === "GET"){
