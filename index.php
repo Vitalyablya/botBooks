@@ -1,5 +1,7 @@
 <?php
-//http://127.0.0.1/workplace/botBooks/
+// http://127.0.0.1/workplace/botBooks/
+// https://github.com/Imangazaliev/DiDOM/blob/master/README-RU.md#Получение-родительского-элемента
+// https://irazasyed.github.io/telegram-bot-sdk/api/v2.0.0/
 require_once "config.php";
 require_once "telegram.php";
 require_once "parseBok.php";
