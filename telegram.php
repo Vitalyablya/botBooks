@@ -5,7 +5,9 @@ function sendCurl(string $url, string $req,  $body = ""){
     curl_setopt($curl, CURLOPT_USERAGENT, 'flibustabot');
     curl_setopt($curl, CURLOPT_HEADER, false);
     if($req === "POST"){
-        curl_setopt($curl, CURLOPT_HTTPHEADER, ['Content-Type:application/json']);
+        print_r($req);
+        print_r($body);
+        curl_setopt($curl, CURLOPT_HTTPHEADER, ['application/x-www-form-urlencoded']);
         curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'POST');
         curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($body));
     }else if($req === "GET"){
@@ -35,10 +37,6 @@ function sendMsg($msg){
     return sendCurl("https://api.telegram.org/bot" . TOKENBOT . "/sendMessage", "POST", $body);
 }// sendMessage
 
-function yysendMsg($msg){
-    $body = ['chat_id' => USERID, 'text' => $msg];
-    return sendCurl("https://api.telegram.org/bot" . TOKENBOT . "/sendMessage", "POST", $body);
-}// sendMessage
 ?>
 
 
