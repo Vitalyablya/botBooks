@@ -32,8 +32,14 @@ function getWebHookInfo(){
 }
 
 function sendMsg($msg){
-    $body = ['chat_id' => USERID, 'text' => "Пока что хеллоу ворлд"];
-    return sendCurl("https://api.telegram.org/bot" . TOKENBOT . "/getWebhookInfo", "POST", $body);
+    $body = ['chat_id' => USERID, 'text' => $msg];
+    return sendCurl("https://api.telegram.org/bot" . TOKENBOT . "/sendMessage", "POST", $body);
 }// sendMessage
 
+function yysendMsg($msg){
+    $body = ['chat_id' => USERID, 'text' => $msg];
+    return sendCurl("https://api.telegram.org/bot" . TOKENBOT . "/sendMessage", "POST", $body);
+}// sendMessage
 ?>
+
+
