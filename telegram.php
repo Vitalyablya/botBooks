@@ -36,6 +36,10 @@ function sendMsg($msg){
     return sendCurl("https://api.telegram.org/bot" . TOKENBOT . "/sendMessage", "POST", $body);
 }// sendMessage
 
+function yysendMsg($msg){
+    $body = ['chat_id' => USERID, 'text' => $msg];
+    return sendCurl("https://api.telegram.org/bot" . TOKENBOT . "/sendMessage", "POST", $body);
+}// sendMessage
 ?>
 
 
