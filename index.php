@@ -24,3 +24,5 @@ function searcheBook(string $nameBook, int $list, int $countBox = 3) : string{
 }
 $list = 10;
 sendMsg(searcheBook("Гарри Поттер", $list));
+
+
