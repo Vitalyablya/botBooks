@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e2097405f274840b812e22436aede274",
+    "content-hash": "1e94d0011839885cecdf2c60102f731d",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -96,47 +96,6 @@
                 }
             ],
             "time": "2020-05-29T15:13:26+00:00"
-        },
-        {
-            "name": "dunglas/php-torcontrol",
-            "version": "v1.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/dunglas/php-torcontrol.git",
-                "reference": "ef908baf586acbc36dac4a2eed3a560894ffafee"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/dunglas/php-torcontrol/zipball/ef908baf586acbc36dac4a2eed3a560894ffafee",
-                "reference": "ef908baf586acbc36dac4a2eed3a560894ffafee",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.4"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "TorControl\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Kévin Dunglas",
-                    "email": "dunglas@gmail.com",
-                    "homepage": "https://dunglas.fr"
-                }
-            ],
-            "description": "Tor control library",
-            "homepage": "https://dunglas.fr",
-            "keywords": [
-                "tor"
-            ],
-            "time": "2016-01-22T08:01:01+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",

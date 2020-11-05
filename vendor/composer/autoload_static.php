@@ -22,7 +22,6 @@ class ComposerStaticInitbbea0f844fb5ec8b5ff6e2dd25f134ae
     public static $prefixLengthsPsr4 = array (
         'T' => 
         array (
-            'TorControl\\' => 11,
             'Telegram\\Bot\\' => 13,
         ),
         'S' => 
@@ -64,10 +63,6 @@ class ComposerStaticInitbbea0f844fb5ec8b5ff6e2dd25f134ae
     );
 
     public static $prefixDirsPsr4 = array (
-        'TorControl\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/dunglas/php-torcontrol/src',
-        ),
         'Telegram\\Bot\\' => 
         array (
             0 => __DIR__ . '/..' . '/irazasyed/telegram-bot-sdk/src',
