@@ -19,4 +19,5 @@ function getCurl(string $url, string $encoding = "gzip", string $proxy = PROXY){
     elseif ($curl_scraped_page)
         return $curl_scraped_page;
 }
+
 ?>

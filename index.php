@@ -1,7 +1,8 @@
 <?php
-// http://127.0.0.1/workplace/botBooks/
-// https://github.com/Imangazaliev/DiDOM/blob/master/README-RU.md
-// https://irazasyed.github.io/telegram-bot-sdk/api/v2.0.0/
+// http://127.0.0.1/workplace/botBooks/ - локальный хост
+// https://github.com/Imangazaliev/DiDOM/blob/master/README-RU.md - библиотека для парсинга 
+// https://dashboard.heroku.com/apps/flibustabotvitalya - хостинг heroku
+// https://tlgrm.ru/docs/bots/api#authorizing-your-bot - документация telegram api
 require_once "config.php";
 require_once "telegram.php";
 require_once "parseBok.php";
@@ -24,3 +25,4 @@ function searcheBook(string $nameBook, int $list, int $countBox = 3) : string{
 $list = 10;
 sendMsg(searcheBook("Гарри Поттер", $list));
 
+print_r(getWebHookInfo());
