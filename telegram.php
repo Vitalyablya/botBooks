@@ -1,5 +1,5 @@
 <?php 
-function sendCurl(string $url, string $req,  $body = "", array $headers = []) : array{
+function sendCurl(string $url, string $req,  $body = "", array $headers = []){
     $headers += ['Content-Type:application/json'];
     $curl = curl_init();
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
@@ -19,6 +19,7 @@ function sendCurl(string $url, string $req,  $body = "", array $headers = []) : 
     curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 2);
     $out = json_decode(curl_exec($curl), true); 
     $code = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+    print_r($code);
     curl_close($curl);
     return $out;
 }
