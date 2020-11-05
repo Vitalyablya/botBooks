@@ -1,6 +1,7 @@
 <?php 
 require_once "torCurl.php";
-
+// в идеале возвращает список книг где [название книги - автор, ссылка на книгу]; если ничего не найдено возвращает false
+// $namebook - имя книги; 
 function getBooksUponReq($namebook){
     $page = 0;
     $res = [];
