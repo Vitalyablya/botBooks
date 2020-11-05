@@ -13,7 +13,7 @@ function getCurl($url, $proxy = PROXY) {
     $error = curl_error($ch);
     curl_close($ch);
     if ($error)
-        return $error;
+        return false;
     elseif ($curl_scraped_page)
         return $curl_scraped_page;
 }
