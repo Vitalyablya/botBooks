@@ -1,7 +1,7 @@
 <?php
 // Возвращает гет запрос через тор сеть
 // $url - url запроса $encoding -  кодирование $proxy - прокси
-function getCurl(string $url, string $encoding = "gzip", string $proxy = PROXY){
+function torCurl(string $url, string $encoding = "gzip", string $proxy = PROXY){
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_PROXY, $proxy);
     curl_setopt($ch, CURLOPT_PROXYTYPE, 7);
