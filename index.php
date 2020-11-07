@@ -1,13 +1,12 @@
 <?php
 // http://127.0.0.1/workplace/botBooks/ - локальный хост
+// http://eb1com.beget.tech/flibustabot/ - хост 
 // https://github.com/Imangazaliev/DiDOM/blob/master/README-RU.md - библиотека для парсинга 
-// https://dashboard.heroku.com/apps/flibustabotvitalya - хостинг heroku
 // https://tlgrm.ru/docs/bots/api#authorizing-your-bot - документация telegram api
 require_once "config.php";
 require_once "telegram.php";
 require_once "parseBok.php";
-
-// Функция возвращает текст, который нужно передать в sendMSG
+// Функция возвращает текст(страницу книг), который нужно передать в sendMSG
 // $nameBook - имя книги которую нужно найти, $list - страница списка, $countBox - кол-во книг в списке(по умолчанию 3)
 function searcheBook(string $nameBook, int $list, int $countBox = 3) : string{ 
     $list--;
@@ -22,8 +21,8 @@ function searcheBook(string $nameBook, int $list, int $countBox = 3) : string{
     }
     return $textMsg;
 }
-
-$list = 1;
-print_r(searcheBook("совершенный код", $list));
-
+$list = 10;
+$result = searcheBook("Гарри Поттер", $list);
+sendMsg($result);
+print_r(getWebHookInfo());
 

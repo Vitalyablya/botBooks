@@ -1,5 +1,4 @@
 <?php 
-require_once "torCurl.php";
 require_once "sendCurlFlibusta.php";
 // в идеале возвращает список книг где [название книги - автор, ссылка на книгу]; если ничего не найдено возвращает false
 // $namebook - имя книги; 

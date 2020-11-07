@@ -23,7 +23,7 @@ function getWebHookInfo(){
 }
 
 function sendMsg($msg){
-    $body = implode("&", ['chat_id=' . USERID, 'text=' . $msg]);
+    $body = implode("&", ['chat_id=' . USERID, 'text=' . urlencode($msg)]);
     return sendCurltelegram("https://api.telegram.org/bot" . TOKENBOT . "/sendMessage", $body);
 }// sendMessage
 

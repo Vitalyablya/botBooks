@@ -1,4 +1,5 @@
-<?php 
+<?php
+// curl на "легальную" флибусту(без прокси и даркнетов)"
 function sendCurlFlibusta(string $url, string $encoding = "gzip"){
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
